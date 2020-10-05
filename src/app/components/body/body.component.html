@@ -1,0 +1,57 @@
+<div>
+  <h1>Body Component</h1>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quisquam
+    expedita eum reprehenderit quod voluptatem. Iusto quos cupiditate doloribus
+    quo, aut eius porro? Debitis incidunt modi recusandae illum vero ut culpa
+    repellat quasi sapiente, nulla officia et quibusdam deleniti ipsam, sit
+    quaerat ipsum temporibus dolor blanditiis? Iure illum animi rerum?
+  </p>
+  <hr />
+  <div class="row">
+    <div class="col-12 col-sm-6">
+      <h2>*ngIf</h2>
+      <div *ngIf="mostrar" class="card">
+        <div class="card-header">
+          Frase
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ frase.autor }}</h5>
+          <p class="card-text">
+            {{ frase.mensaje }} <br />
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
+            dolorum cum at reprehenderit officia, voluptatibus ipsam quibusdam
+            nobis voluptates rerum?
+          </p>
+          <button (click)="mostrar = !mostrar" class="btn btn-primary">
+            Ocultar tarjeta
+          </button>
+        </div>
+      </div>
+      <button
+        *ngIf="!mostrar"
+        (click)="mostrar = !mostrar"
+        class="btn btn-primary"
+      >
+        Mostrar tarjeta
+      </button>
+    </div>
+
+    <div class="col-12 col-sm-6">
+      <h2>*ngFor</h2>
+      <div class="card">
+        <div class="card-header">
+          Personajes
+        </div>
+        <ul class="list-group">
+          <li
+            *ngFor="let personaje of personajes; let i = index"
+            class="list-group-item"
+          >
+            {{ i + 1 }}. {{ personaje }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
